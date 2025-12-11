@@ -1,0 +1,49 @@
+rule_templates:
+  - name: "prevent_basic_exfiltration"
+    description: "Block any consequential write after sensitive read (sequence pattern)."
+    static_rules:
+      read_file: ALLOW
+      read_database: ALLOW
+      web_search: ALLOW
+      send_email: ALLOW
+    taint_rules:
+      - tool_class: CONSEQUENTIAL_WRITE
+        action: BLOCK_SECOND
+        error: "Security Policy: Direct exfiltration pattern detected (read sensitive → external write)."
+        pattern:
+          type: sequence
+          steps:
+            - class: SENSITIVE_READ
+            - class: CONSEQUENTIAL_WRITE
+
+  - name: "allow_only_sanitized_export"
+    description: "Allow export only if data was sanitized after a sensitive read; otherwise block."
+    taint_rules:
+      # Add taint when reading sensitive data
+      - tool_class: SENSITIVE_READ
+        action: ADD_TAINT
+        tag: "sensitive_data"
+
+      # Remove taint when a sanitizer runs
+      - tool_class: SANITIZER
+        action: REMOVE_TAINT
+        tag: "sensitive_data"
+
+      # Block consequential writes if taint remains
+      - tool_class: CONSEQUENTIAL_WRITE
+        action: CHECK_TAINT
+        forbidden_tags: ["sensitive_data"]
+        error: "Exfiltration blocked: sanitize sensitive data before external write."
+
+  - name: "never_execute_after_sensitive"
+    description: "Block unsafe execution if the session has seen sensitive data."
+    taint_rules:
+      - tool_class: UNSAFE_EXECUTE
+        action: BLOCK_CURRENT
+        error: "Unsafe execute not allowed after sensitive access."
+        pattern:
+          type: logic
+          condition:
+            AND:
+              - session_has_class: SENSITIVE_READ
+              - current_tool_class: UNSAFE_EXECUTE
