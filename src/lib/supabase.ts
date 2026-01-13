@@ -107,6 +107,10 @@ export async function saveProject(
 }
 
 export async function getUserProjects(userId: string, clerkToken?: string): Promise<Project[]> {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn("Cannot fetch projects: database credentials missing");
+    return [];
+  }
   const supabase = await getClient(clerkToken);
   const userIdString = String(userId); // Ensure it's a string
   const { data, error } = await supabase
@@ -116,7 +120,11 @@ export async function getUserProjects(userId: string, clerkToken?: string): Prom
     .order("updated_at", { ascending: false });
 
   if (error) {
-    console.error("Error fetching projects:", error);
+    if (error.message?.includes("Failed to fetch")) {
+      console.warn("Failed to connect to database");
+    } else {
+      console.error("Error fetching projects:", JSON.stringify(error, null, 2));
+    }
     return [];
   }
 

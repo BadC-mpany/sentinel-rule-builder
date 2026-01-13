@@ -8,12 +8,12 @@ import { Shield, Zap, Lock, ArrowRight, CheckCircle2 } from "lucide-react";
 export default function HomePage() {
   return (
     <div className="h-full overflow-y-auto bg-bg-primary text-text-primary font-[var(--font-inter)] selection:bg-primary/20">
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         {/* Abstract Background Element */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 -z-10" />
-        
+
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-8 animate-fade-in border border-primary/20">
             <span className="relative flex h-2 w-2">
@@ -22,15 +22,15 @@ export default function HomePage() {
             </span>
             Security Framework for AI Agents
           </div>
-          
+
           <h1 className="text-6xl md:text-7xl font-bold font-[var(--font-display)] tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-text-primary to-text-secondary animate-slide-in">
             Sentinel
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto leading-relaxed mb-10 animate-slide-in" style={{ animationDelay: "0.1s" }}>
-            The missing security layer for modern AI. <span className="text-primary font-semibold">badcompany</span> framework for making agents secure.
+            The missing security layer for modern Agents.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in" style={{ animationDelay: "0.2s" }}>
             <Link href="/docs#getting-started">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1">
@@ -39,7 +39,7 @@ export default function HomePage() {
             </Link>
             <Link href="/contact">
               <button className="h-14 px-8 text-lg font-medium text-text-primary hover:bg-bg-secondary rounded-full transition-colors border border-border-primary">
-                Contact Sales
+                Contact Us
               </button>
             </Link>
           </div>
@@ -55,7 +55,7 @@ export default function HomePage() {
                 We've jailbroken every state-of-the-art LLM.
               </h2>
               <p className="text-lg text-text-secondary leading-relaxed mb-6">
-                AI agents now have authority over bank accounts, payment rails, and financial operations. We're building the security industry forgot.
+                The Sentinel architecture is a secure framwork for Agents to operate in. It tracks tool usage, and revoke tool requests if the Agent violates security policies.
               </p>
               <ul className="space-y-4">
                 {[
@@ -70,7 +70,7 @@ export default function HomePage() {
                 ))}
               </ul>
             </div>
-            
+
             {/* Visual Representation */}
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-20" />
@@ -86,7 +86,7 @@ export default function HomePage() {
                     <div className="w-3 h-3 rounded-full bg-green-500/20" />
                   </div>
                 </div>
-                
+
                 <div className="space-y-4 font-mono text-sm">
                   <div className="flex justify-between items-center p-3 bg-bg-secondary rounded-lg border border-border-primary">
                     <span className="text-text-secondary">read_database</span>
@@ -111,10 +111,10 @@ export default function HomePage() {
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold font-[var(--font-display)] mb-4">Everything you need to secure agents</h2>
-            <p className="text-text-secondary">Comprehensive tools for the next generation of AI.</p>
+            <h2 className="text-3xl font-bold font-[var(--font-display)] mb-4">Detection -- Control -- Utility</h2>
+            <p className="text-text-secondary">The three pillars</p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {

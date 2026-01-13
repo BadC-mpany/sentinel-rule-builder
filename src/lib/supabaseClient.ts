@@ -15,7 +15,7 @@ if (!supabaseAnonKey) {
 // Client-side Supabase client (for use in client components)
 export function getSupabaseClient(token?: string) {
   const options: any = {};
-  
+
   if (token) {
     // Use Clerk JWT token for authentication
     options.global = {

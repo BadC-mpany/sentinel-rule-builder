@@ -15,7 +15,6 @@ import {
   Mail,
   Sun,
   Moon,
-  Shield,
   LogIn,
 } from "lucide-react";
 
@@ -42,9 +41,11 @@ export function Sidebar() {
       {/* Logo Area */}
       <div className="h-16 px-6 flex items-center border-b border-sidebar-border">
         <Link href="/" className="flex items-center gap-3 group w-full">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform duration-200">
-            <Shield className="w-5 h-5 text-white" />
-          </div>
+          <img
+            src="/favicon.ico"
+            alt="Sentinel Logo"
+            className="w-7 h-7 group-hover:scale-105 transition-transform duration-200"
+          />
           <div className="flex flex-col">
             <span className="font-bold text-sm tracking-tight text-white">Sentinel</span>
             <span className="text-[10px] uppercase tracking-wider text-sidebar-text-muted font-medium">Rule Builder</span>

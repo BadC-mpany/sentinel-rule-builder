@@ -103,7 +103,7 @@ export default function SplashPage() {
                   isDark ? "text-purple-400 hover:text-purple-300" : "text-purple-600 hover:text-purple-700"
                 )}
               >
-                BadCompany
+                Badcompany
               </a>
             </p>
           </div>
