@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ConditionalSidebar } from "@/components/ConditionalSidebar";
@@ -14,12 +14,7 @@ const inter = Inter({
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -34,6 +29,11 @@ export const metadata: Metadata = {
   description:
     "Build security rules for your RAG systems with the vSAML architecture. Define tool capabilities and taint policies to protect your AI agents.",
   keywords: ["RAG", "Security", "AI", "LangChain", "Rules", "vSAML"],
+  icons: {
+    icon: "/lilith-zero.jpg",
+    shortcut: "/lilith-zero.jpg",
+    apple: "/lilith-zero.jpg",
+  },
 };
 
 const PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
@@ -51,7 +51,7 @@ export default function RootLayout({
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${inter.variable} ${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
+          className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
         >
           <ThemeProvider>
             <div className="flex h-screen w-full overflow-hidden bg-bg-primary">

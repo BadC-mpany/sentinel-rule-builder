@@ -1,4 +1,5 @@
 "use client";
+// Force recompile
 
 import React from "react";
 import Link from "next/link";
@@ -42,9 +43,9 @@ export function Sidebar() {
       <div className="h-16 px-6 flex items-center border-b border-sidebar-border">
         <Link href="/" className="flex items-center gap-3 group w-full">
           <img
-            src="/favicon.ico"
+            src="/lilith-zero.jpg"
             alt="Sentinel Logo"
-            className="w-7 h-7 group-hover:scale-105 transition-transform duration-200"
+            className="w-7 h-7 group-hover:scale-105 transition-transform duration-200 rounded-full"
           />
           <div className="flex flex-col">
             <span className="font-bold text-sm tracking-tight text-white">Sentinel</span>

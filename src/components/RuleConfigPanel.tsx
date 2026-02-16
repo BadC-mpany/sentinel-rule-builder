@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { SheetTool, TaintRule, TaintClass, TaintAction } from "@/types";
-import { taintClassDefinitions } from "@/data/langchainTools";
+import { taintClassDefinitions } from "@/lib/constants";
 import {
   X,
   Plus,
@@ -42,15 +42,7 @@ const taintActions: { value: TaintAction; label: string; description: string }[]
   },
 ];
 
-const taintClasses: TaintClass[] = [
-  "SAFE_READ",
-  "SENSITIVE_READ",
-  "SAFE_WRITE",
-  "CONSEQUENTIAL_WRITE",
-  "UNSAFE_EXECUTE",
-  "HUMAN_VERIFY",
-  "SANITIZER",
-];
+
 
 export function RuleConfigPanel({
   sheetTool,
@@ -283,9 +275,9 @@ export function RuleConfigPanel({
                             className="w-full px-3 py-2 bg-bg-secondary border border-border-primary rounded-lg text-text-primary focus:outline-none focus:border-accent-primary"
                           >
                             <option value="">Select class...</option>
-                            {taintClasses.map((tc) => (
-                              <option key={tc} value={tc}>
-                                {tc.replace(/_/g, " ")}
+                            {taintClassDefinitions.map((def) => (
+                              <option key={def.className} value={def.className}>
+                                {def.className.replace(/_/g, " ")}
                               </option>
                             ))}
                           </select>

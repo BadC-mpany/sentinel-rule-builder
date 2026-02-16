@@ -96,8 +96,8 @@ export default function ApiSettingsPage() {
                     className={cn("w-full flex items-center justify-between p-6 hover:opacity-80 transition-opacity cursor-pointer", isDark ? "hover:bg-gray-700/50" : "hover:bg-gray-50")}
                   >
                     <div className="flex items-center gap-3 flex-1 text-left">
-                      <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0", isDark ? "bg-purple-900/30" : "bg-purple-100")}>
-                        <Key className={cn("w-5 h-5", isDark ? "text-purple-400" : "text-purple-600")} />
+                      <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0", isDark ? "bg-primary/20" : "bg-primary/10")}>
+                        <Key className={cn("w-5 h-5", isDark ? "text-primary" : "text-primary")} />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h2 className={cn("font-semibold text-lg", isDark ? "text-white" : "text-gray-900")}>

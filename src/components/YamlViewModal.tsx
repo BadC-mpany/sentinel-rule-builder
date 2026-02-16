@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { X, Copy, Check } from "lucide-react";
 import { SheetTool, TaintClass } from "@/types";
 import yaml from "js-yaml";
-import { loadClassesFromYaml, ClassDefinition } from "@/lib/loadClasses";
+import { taintClassDefinitions } from "@/lib/constants";
 import { useBuilderStore } from "@/store/builderStore";
 
 interface YamlViewModalProps {
@@ -14,16 +14,12 @@ interface YamlViewModalProps {
 
 export function YamlViewModal({ sheetTool, onClose }: YamlViewModalProps) {
   const [copied, setCopied] = useState(false);
-  const [classes, setClasses] = useState<ClassDefinition[]>([]);
+  // Removed live loading state
   const { updateToolTaintClass, sheetTools } = useBuilderStore();
-  
+
   // Get the latest tool from the store to reflect updates
   const currentTool = sheetTools.find((t) => t.id === sheetTool.id) || sheetTool;
   const [selectedClass, setSelectedClass] = useState<TaintClass>(currentTool.tool.taintClass);
-
-  useEffect(() => {
-    loadClassesFromYaml().then(setClasses);
-  }, []);
 
   useEffect(() => {
     setSelectedClass(currentTool.tool.taintClass);
@@ -80,11 +76,10 @@ export function YamlViewModal({ sheetTool, onClose }: YamlViewModalProps) {
           <div className="flex items-center gap-2">
             <button
               onClick={copyToClipboard}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
-                copied
-                  ? "bg-severity-low text-white"
-                  : "bg-bg-secondary text-text-secondary hover:bg-bg-tertiary"
-              }`}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${copied
+                ? "bg-severity-low text-white"
+                : "bg-bg-secondary text-text-secondary hover:bg-bg-tertiary"
+                }`}
             >
               {copied ? (
                 <>
@@ -117,15 +112,15 @@ export function YamlViewModal({ sheetTool, onClose }: YamlViewModalProps) {
               onChange={(e) => handleClassChange(e.target.value as TaintClass)}
               className="w-full px-3 py-2 bg-bg-secondary border border-border-primary rounded-lg text-text-primary focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary"
             >
-              {classes.map((classDef) => (
+              {taintClassDefinitions.map((classDef) => (
                 <option key={classDef.className} value={classDef.className}>
                   {classDef.className.replace(/_/g, " ")}
                 </option>
               ))}
             </select>
-            {classes.find((c) => c.className === selectedClass) && (
+            {taintClassDefinitions.find((c) => c.className === selectedClass) && (
               <p className="mt-2 text-xs text-text-muted">
-                {classes.find((c) => c.className === selectedClass)?.description}
+                {taintClassDefinitions.find((c) => c.className === selectedClass)?.description}
               </p>
             )}
           </div>

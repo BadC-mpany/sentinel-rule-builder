@@ -13,9 +13,9 @@ interface ToggleProps {
 
 export function Toggle({ checked, onCheckedChange, disabled, className, label }: ToggleProps) {
   const inputId = React.useId();
-  
+
   return (
-    <label 
+    <label
       htmlFor={inputId}
       className={cn("flex items-center gap-2 cursor-pointer", disabled && "cursor-not-allowed", className)}
     >
@@ -31,7 +31,7 @@ export function Toggle({ checked, onCheckedChange, disabled, className, label }:
         <div
           className={cn(
             "w-11 h-6 bg-gray-200 rounded-full relative transition-colors duration-200",
-            checked && "bg-purple-600",
+            checked && "bg-primary",
             disabled && "opacity-50 cursor-not-allowed",
             !disabled && "cursor-pointer"
           )}

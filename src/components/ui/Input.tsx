@@ -12,7 +12,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(
-            "input-base",
+            "w-full h-10 px-3 rounded-md border border-border-primary bg-bg-primary text-text-primary outline-none transition-all duration-200 focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-text-secondary/50 font-body",
             rightAdornment && "pr-10",
             className
           )}

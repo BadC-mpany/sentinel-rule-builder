@@ -19,12 +19,12 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
   const isDark = theme === "dark";
 
   return (
-    <Card className={cn("hover:shadow-lg transition-all", isDark ? "bg-zinc-900 border-zinc-800" : "bg-white border-gray-200")}>
+    <Card className={cn("hover:shadow-lg transition-all", isDark ? "bg-bg-secondary border-border-primary" : "bg-white border-gray-200")}>
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-start gap-3 flex-1">
-            <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0", isDark ? "bg-purple-900/30" : "bg-purple-100")}>
-              <Folder className={cn("w-6 h-6", isDark ? "text-purple-400" : "text-purple-600")} />
+            <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0", isDark ? "bg-primary/20" : "bg-primary/10")}>
+              <Folder className={cn("w-6 h-6", isDark ? "text-primary" : "text-primary")} />
             </div>
             <div className="flex-1 min-w-0">
               <h3 className={cn("font-semibold text-lg mb-1 truncate", isDark ? "text-white" : "text-gray-900")}>

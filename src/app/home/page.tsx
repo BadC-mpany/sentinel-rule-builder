@@ -27,11 +27,11 @@ export default function HomePage() {
             Sentinel
           </h1>
 
-          <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto leading-relaxed mb-10 animate-slide-in" style={{ animationDelay: "0.1s" }}>
+          <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto leading-relaxed mb-10 animate-slide-in [animation-delay:0.1s]">
             The missing security layer for modern Agents.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in [animation-delay:0.2s]">
             <Link href="/docs#getting-started">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1">
                 Get Started in 10 min <ArrowRight className="ml-2 w-5 h-5" />
@@ -73,7 +73,7 @@ export default function HomePage() {
 
             {/* Visual Representation */}
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-20" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary-hover rounded-2xl blur opacity-20" />
               <div className="relative bg-bg-primary border border-border-primary rounded-2xl p-8 shadow-2xl">
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-border-primary">
                   <div className="flex items-center gap-2">

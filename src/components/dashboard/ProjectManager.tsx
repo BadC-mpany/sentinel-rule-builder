@@ -148,7 +148,7 @@ export function ProjectManager({ project, onUpdate }: ProjectManagerProps) {
     }
 
     return (
-        <div className={cn("p-6 space-y-8", isDark ? "bg-zinc-950" : "bg-gray-50")}>
+        <div className={cn("p-6 space-y-8", isDark ? "bg-bg-primary" : "bg-gray-50")}>
             {/* Header / Toolbar */}
             <div className="flex justify-end items-center gap-3 mb-4">
                 <div className="flex items-center gap-2">
@@ -158,7 +158,7 @@ export function ProjectManager({ project, onUpdate }: ProjectManagerProps) {
                     <select
                         value={refreshInterval}
                         onChange={(e) => setRefreshInterval(Number(e.target.value))}
-                        className={cn("text-xs border rounded-md px-2 py-1 outline-none focus:ring-1", isDark ? "bg-gray-800 border-gray-700 text-white focus:ring-purple-500" : "bg-white border-gray-200 focus:ring-purple-500")}
+                        className={cn("text-xs border rounded-md px-2 py-1 outline-none focus:ring-1", isDark ? "bg-gray-800 border-gray-700 text-white focus:ring-primary" : "bg-white border-gray-200 focus:ring-primary")}
                     >
                         <option value={0}>Off</option>
                         <option value={5}>5s</option>

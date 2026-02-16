@@ -45,9 +45,9 @@ const taintClassBadgeStyles: Record<TaintClass, { bg: string; text: string; bord
     border: "border-amber-200",
   },
   HUMAN_VERIFY: {
-    bg: "bg-purple-50",
-    text: "text-purple-700",
-    border: "border-purple-200",
+    bg: "bg-yellow-50",
+    text: "text-yellow-700",
+    border: "border-yellow-200",
   },
   SANITIZER: {
     bg: "bg-cyan-50",
@@ -70,7 +70,7 @@ export function ToolCard({ tool, isDragging, onToggle, checked, compact }: ToolC
   const { theme } = useTheme();
   const isDark = theme === "dark";
   const classesToShow = tool.classes && tool.classes.length > 0 ? tool.classes : [tool.taintClass];
-  
+
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: tool.id,
     data: { tool },
@@ -79,8 +79,8 @@ export function ToolCard({ tool, isDragging, onToggle, checked, compact }: ToolC
 
   const style = transform
     ? {
-        transform: CSS.Translate.toString(transform),
-      }
+      transform: CSS.Translate.toString(transform),
+    }
     : undefined;
 
   const badgeStyle = taintClassBadgeStyles[tool.taintClass];
@@ -90,7 +90,7 @@ export function ToolCard({ tool, isDragging, onToggle, checked, compact }: ToolC
       <Card
         className={cn(
           "p-3 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
-          checked && "ring-2 ring-purple-500 ring-offset-1"
+          checked && "ring-2 ring-primary ring-offset-1"
         )}
       >
         <div className="flex items-center gap-2">
@@ -133,16 +133,16 @@ export function ToolCard({ tool, isDragging, onToggle, checked, compact }: ToolC
       <Card
         className={cn(
           "p-4 transition-all duration-200",
-          "hover:shadow-md hover:-translate-y-0.5 hover:border-purple-300",
-          isDragging && "opacity-50 shadow-lg ring-2 ring-purple-500",
-          checked && "ring-2 ring-purple-500 ring-offset-1"
+          "hover:shadow-md hover:-translate-y-0.5 hover:border-primary/50",
+          isDragging && "opacity-50 shadow-lg ring-2 ring-primary",
+          checked && "ring-2 ring-primary ring-offset-1"
         )}
       >
         <div className="flex items-start gap-3">
           {!onToggle && (
             <GripVertical className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
           )}
-          
+
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-2">
               <h3 className={cn("font-semibold text-sm truncate font-[var(--font-inter)]", isDark ? "text-white" : "text-gray-900")}>

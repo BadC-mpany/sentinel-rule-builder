@@ -75,7 +75,6 @@ export function DeleteProjectModal({ projectName, onConfirm, onCancel }: DeleteP
                                             "absolute inset-0 pointer-events-none flex items-center px-3 font-mono text-sm select-none",
                                             isDark ? "text-zinc-700" : "text-gray-300"
                                         )}
-                                        style={{ userSelect: 'none' }}
                                     >
                                         {projectName}
                                     </div>

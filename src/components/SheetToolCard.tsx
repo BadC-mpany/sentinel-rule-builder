@@ -46,9 +46,9 @@ const taintClassBadgeStyles: Record<TaintClass, { bg: string; text: string; bord
     border: "border-amber-200",
   },
   HUMAN_VERIFY: {
-    bg: "bg-purple-50",
-    text: "text-purple-700",
-    border: "border-purple-200",
+    bg: "bg-yellow-50",
+    text: "text-yellow-700",
+    border: "border-yellow-200",
   },
   SANITIZER: {
     bg: "bg-cyan-50",
@@ -78,7 +78,7 @@ export function SheetToolCard({
     <Card
       className={cn(
         "p-4 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
-        isSelected && (isDark ? "ring-2 ring-purple-500 ring-offset-1 ring-offset-zinc-900 border-purple-500" : "ring-2 ring-purple-500 ring-offset-1 border-purple-300")
+        isSelected && (isDark ? "ring-2 ring-primary ring-offset-1 ring-offset-bg-primary border-primary" : "ring-2 ring-primary ring-offset-1 border-primary/50")
       )}
     >
       <div className="flex items-start gap-3">
@@ -88,7 +88,7 @@ export function SheetToolCard({
             <span
               className={cn(
                 "w-2 h-2 rounded-full flex-shrink-0",
-                isDark 
+                isDark
                   ? taintStyle.text.replace("700", "500")
                   : taintStyle.bg.replace("50", "400")
               )}
@@ -137,8 +137,8 @@ export function SheetToolCard({
             className={cn(
               "p-2 rounded-md transition-all",
               isSelected
-                ? "bg-purple-600 text-white"
-                : isDark 
+                ? "bg-primary text-white"
+                : isDark
                   ? "text-zinc-500 hover:bg-zinc-800 hover:text-zinc-300"
                   : "text-gray-400 hover:bg-gray-100 hover:text-gray-600"
             )}

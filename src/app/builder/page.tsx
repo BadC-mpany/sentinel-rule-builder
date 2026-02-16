@@ -620,7 +620,7 @@ export default function BuilderPage() {
               </>
             )}
             {showBuilderInterface && canExport && (
-              <Button onClick={handleExport} className="h-9 text-sm bg-purple-600 hover:bg-purple-700 text-white border-0">
+              <Button onClick={handleExport} className="h-9 text-sm bg-primary hover:bg-primary-hover text-white border-0">
                 <Download className="w-4 h-4 mr-2" />
                 Export
               </Button>
@@ -701,7 +701,7 @@ export default function BuilderPage() {
                   <Card className="border-border-primary bg-bg-primary">
                     <div className="p-4 border-b border-border-primary flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <ShieldCheck className="w-5 h-5 text-accent-primary" />
+                        <ShieldCheck className="w-5 h-5 text-primary" />
                         <p className="text-sm font-semibold text-text-primary">Rule Templates</p>
                       </div>
                       <Badge variant="secondary" className="text-[11px]">
@@ -718,8 +718,8 @@ export default function BuilderPage() {
                             className={cn(
                               "border rounded-xl p-3 transition-colors",
                               selectedTemplateName === template.name
-                                ? "border-accent-primary/70 bg-accent-primary/5"
-                                : "border-border-primary hover:border-accent-primary/40"
+                                ? "border-primary/70 bg-primary/5"
+                                : "border-border-primary hover:border-primary/40"
                             )}
                           >
                             <div className="flex items-start justify-between gap-3">
@@ -744,7 +744,7 @@ export default function BuilderPage() {
                     </div>
                   </Card>
 
-                  <Card className="border-border-primary bg-bg-primary flex flex-col justify-between hover:border-accent-primary/70 transition-colors cursor-pointer group">
+                  <Card className="border-border-primary bg-bg-primary flex flex-col justify-between hover:border-primary/70 transition-colors cursor-pointer group">
                     <div className="p-6 space-y-3">
                       <h3 className="text-lg font-semibold text-text-primary">Start from scratch</h3>
                       <p className="text-sm text-text-secondary">
@@ -820,8 +820,7 @@ export default function BuilderPage() {
 
               {/* Right Canvas - Steps */}
               <div className="flex-1 flex flex-col bg-bg-tertiary relative">
-                <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
-                  style={{ backgroundImage: `radial-gradient(currentColor 1px, transparent 1px)`, backgroundSize: '24px 24px' }}>
+                <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(currentColor_1px,transparent_1px)] bg-[length:24px_24px]">
                 </div>
 
                 <div className="relative z-10 flex-1 p-8 overflow-hidden">
