@@ -4,10 +4,14 @@ import React from "react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Shield, Zap, Lock, ArrowRight, CheckCircle2 } from "lucide-react";
+import ShinyText from "@/components/ShinyText";
 
 export default function HomePage() {
   return (
-    <div className="h-full overflow-y-auto bg-bg-primary text-text-primary font-[var(--font-inter)] selection:bg-primary/20">
+    <div
+      className="h-full overflow-y-auto bg-bg-primary text-text-primary font-sans selection:bg-primary/20"
+      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+    >
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -24,7 +28,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-6xl md:text-7xl font-bold font-[var(--font-display)] tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-text-primary to-text-secondary animate-slide-in">
-            Sentinel
+            Lilith-zero
           </h1>
 
           <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto leading-relaxed mb-10 animate-slide-in [animation-delay:0.1s]">
@@ -33,14 +37,21 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in [animation-delay:0.2s]">
             <Link href="/docs#getting-started">
-              <Button size="lg" className="h-14 px-8 text-lg rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1">
-                Get Started in 10 min <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <div className="h-14 px-8 rounded shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1 bg-white text-black hover:bg-gray-200 transition-all flex items-center justify-center cursor-pointer min-w-[200px]">
+                <ShinyText
+                  text="GET STARTED"
+                  disabled={false}
+                  speed={2}
+                  color="#4b5563"
+                  shineColor="#ffffff"
+                  className="font-bold text-lg tracking-wide"
+                />
+              </div>
             </Link>
             <Link href="/contact">
-              <button className="h-14 px-8 text-lg font-medium text-text-primary hover:bg-bg-secondary rounded-full transition-colors border border-border-primary">
-                Contact Us
-              </button>
+              <div className="h-14 px-8 rounded border bg-transparent transition-all flex items-center justify-center cursor-pointer min-w-[200px] font-bold text-lg tracking-wide border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
+                SCHEDULE A CALL
+              </div>
             </Link>
           </div>
         </div>
@@ -55,7 +66,7 @@ export default function HomePage() {
                 We've jailbroken every state-of-the-art LLM.
               </h2>
               <p className="text-lg text-text-secondary leading-relaxed mb-6">
-                The Sentinel architecture is a secure framwork for Agents to operate in. It tracks tool usage, and revoke tool requests if the Agent violates security policies.
+                The Lilith-zero architecture is a secure framwork for Agents to operate in. It tracks tool usage, and revoke tool requests if the Agent violates security policies.
               </p>
               <ul className="space-y-4">
                 {[

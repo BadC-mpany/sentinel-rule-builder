@@ -589,13 +589,13 @@ export default function BuilderPage() {
                   <ArrowLeft className="w-5 h-5" />
                 </button>
                 <div>
-                  <h1 className="text-lg font-bold font-[var(--font-inter)] text-text-primary">
+                  <h1 className="text-lg font-bold font-sans text-text-primary">
                     {editingProject ? `Editing: ${editingProject.name}` : "New Policy"}
                   </h1>
                 </div>
               </>
             ) : (
-              <h1 className="text-lg font-bold font-[var(--font-inter)] text-text-primary">Projects</h1>
+              <h1 className="text-lg font-bold font-sans text-text-primary">Projects</h1>
             )}
           </div>
 
@@ -604,17 +604,17 @@ export default function BuilderPage() {
             {!showBuilderInterface && (
               <>
                 <SignedIn>
-                  <Button onClick={handleNewProject} className="h-9 text-sm">
+                  <button onClick={handleNewProject} className="h-9 px-4 text-sm font-medium border bg-transparent transition-colors rounded flex items-center border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
                     <Plus className="w-4 h-4 mr-2" />
                     New Project
-                  </Button>
+                  </button>
                 </SignedIn>
                 <SignedOut>
                   <SignInButton mode="modal">
-                    <Button className="h-9 text-sm">
+                    <button className="h-9 px-4 text-sm font-medium border bg-transparent transition-colors rounded flex items-center border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
                       <Plus className="w-4 h-4 mr-2" />
                       New Project
-                    </Button>
+                    </button>
                   </SignInButton>
                 </SignedOut>
               </>
@@ -643,10 +643,10 @@ export default function BuilderPage() {
                     </div>
                     <h3 className="text-lg font-semibold mb-2">No projects yet</h3>
                     <p className="text-text-secondary mb-6">Create your first security policy to get started</p>
-                    <Button onClick={handleNewProject}>
+                    <button onClick={handleNewProject} className="h-10 px-4 py-2 font-medium border bg-transparent transition-colors rounded flex items-center border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
                       <Plus className="w-4 h-4 mr-2" />
                       Create Project
-                    </Button>
+                    </button>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

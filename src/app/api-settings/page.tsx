@@ -48,7 +48,7 @@ export default function ApiSettingsPage() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className={cn("text-3xl font-bold mb-2 font-[var(--font-inter)]", isDark ? "text-white" : "text-gray-900")}>
+          <h1 className={cn("text-3xl font-bold mb-2 font-sans", isDark ? "text-white" : "text-gray-900")}>
             API / JWT Settings
           </h1>
           <p className={cn("text-sm", isDark ? "text-gray-400" : "text-gray-600")}>

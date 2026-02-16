@@ -121,7 +121,7 @@ export default function DocsPage() {
               <div className="prose prose-slate dark:prose-invert max-w-none">
                 {/* Simplified rendering for demo - ideally use a markdown parser */}
                 <h1 className="text-4xl font-bold font-[var(--font-display)] mb-8 text-text-primary">{section.title}</h1>
-                <div className="whitespace-pre-wrap font-[var(--font-inter)] text-text-secondary leading-7">
+                <div className="whitespace-pre-wrap font-sans text-text-secondary leading-7">
                   {section.content.split('\n').map((line, i) => {
                     // Very basic pseudo-markdown rendering
                     if (line.startsWith('## ')) return <h2 key={i} className="text-2xl font-bold mt-8 mb-4 text-text-primary">{line.replace('## ', '')}</h2>;

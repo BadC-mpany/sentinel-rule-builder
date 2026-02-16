@@ -52,6 +52,6 @@ const alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 const generateId = customAlphabet(alphabet, 32);
 
 export function generateApiKey(): string {
-  return `sentinel_${generateId()}`;
+  return `lilith_${generateId()}`;
 }
 

@@ -17,7 +17,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("sentinel-theme") as Theme | null;
+    const savedTheme = localStorage.getItem("lilith-theme") as Theme | null;
     const themeToUse = savedTheme && (savedTheme === "light" || savedTheme === "dark") ? savedTheme : "light";
     setThemeState(themeToUse);
     document.documentElement.setAttribute("data-theme", themeToUse);
@@ -30,7 +30,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem("sentinel-theme", newTheme);
+    localStorage.setItem("lilith-theme", newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
     if (newTheme === "dark") {
       document.documentElement.classList.add("dark");

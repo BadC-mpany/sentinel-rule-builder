@@ -55,7 +55,7 @@ export const useBuilderStore = create<BuilderState>()(
           (t) => t.tool.id === tool.id
         );
         if (existingTool) return; // Don't add duplicates
-        
+
 
         const newSheetTool: SheetTool = {
           id: uuidv4(),
@@ -111,9 +111,9 @@ export const useBuilderStore = create<BuilderState>()(
           sheetTools: state.sheetTools.map((t) =>
             t.id === id
               ? {
-                  ...t,
-                  tool: { ...t.tool, taintClass },
-                }
+                ...t,
+                tool: { ...t.tool, taintClass },
+              }
               : t
           ),
         }));
@@ -198,7 +198,7 @@ export const useBuilderStore = create<BuilderState>()(
       },
     }),
     {
-      name: "sentinel-builder-storage",
+      name: "lilith-builder-storage",
       partialize: (state) => ({
         sheetTools: state.sheetTools,
         policyName: state.policyName,

@@ -28,7 +28,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: "Home", href: "/home", icon: <Home className="w-4 h-4" /> },
   { name: "Builder", href: "/builder", icon: <Hammer className="w-4 h-4" /> },
-  { name: "API / JWT", href: "/api-settings", icon: <Key className="w-4 h-4" /> },
+  // { name: "API / JWT", href: "/api-settings", icon: <Key className="w-4 h-4" /> },
   { name: "Docs", href: "/docs", icon: <BookOpen className="w-4 h-4" /> },
   { name: "Contact", href: "/contact", icon: <Mail className="w-4 h-4" /> },
 ];
@@ -44,11 +44,11 @@ export function Sidebar() {
         <Link href="/" className="flex items-center gap-3 group w-full">
           <img
             src="/lilith-zero.jpg"
-            alt="Sentinel Logo"
+            alt="Lilith Logo"
             className="w-7 h-7 group-hover:scale-105 transition-transform duration-200 rounded-full"
           />
           <div className="flex flex-col">
-            <span className="font-bold text-sm tracking-tight text-white">Sentinel</span>
+            <span className="font-bold text-sm tracking-tight text-white">Lilith</span>
             <span className="text-[10px] uppercase tracking-wider text-sidebar-text-muted font-medium">Rule Builder</span>
           </div>
         </Link>
@@ -128,7 +128,7 @@ export function Sidebar() {
         </div>
 
         <div className="mt-4 px-2 text-center">
-          <p className="text-[10px] text-sidebar-text-muted/50 font-mono">vSAML v1.0.2</p>
+          <p className="text-[10px] text-sidebar-text-muted/50 font-mono">Lilith v0.1.0</p>
         </div>
       </div>
     </aside>

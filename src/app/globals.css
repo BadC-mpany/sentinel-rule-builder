@@ -23,13 +23,13 @@
   --color-primary-foreground: var(--primary-foreground);
 
   /* Unified Font Stack */
-  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-inter: 'Space Grotesk', system-ui, sans-serif;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Tailwind Font Families */
-  --font-family-sans: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-family-sans: 'Space Grotesk', system-ui, sans-serif;
   --font-family-mono: var(--font-mono);
 
   /* Accent & Semantic Aliases */
@@ -163,7 +163,7 @@
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-inter);
+  font-family: var(--font-display);
   transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
 }

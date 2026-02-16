@@ -14,9 +14,12 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div className="h-full overflow-y-auto bg-bg-primary p-8 flex items-center justify-center">
+    <div
+      className="h-full overflow-y-auto bg-bg-primary p-8 flex items-center justify-center"
+      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+    >
       <div className="w-full max-w-5xl grid md:grid-cols-2 gap-12 items-start">
-        
+
         {/* Left Column: Info */}
         <div className="space-y-8 pt-10">
           <div>
@@ -58,21 +61,20 @@ export default function ContactPage() {
           <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-white mb-6 shadow-lg shadow-primary/30">
             <Calendar className="w-7 h-7" />
           </div>
-          
+
           <h2 className="text-2xl font-bold mb-4">Book a meeting</h2>
           <p className="text-text-secondary mb-8">
-            Book a 30-minute call directly with our team to discuss your specific needs and how Sentinel can fit into your architecture.
+            Book a 30-minute call directly with our team to discuss your specific needs and how Lilith can fit into your architecture.
           </p>
 
-          <Button
+          <button
             data-cal-namespace="30min"
             data-cal-link="janos-mozer/30min"
             data-cal-config='{"layout":"month_view","theme":"auto"}'
-            variant="default"
-            className="w-full h-14 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
+            className="w-full h-14 text-lg font-bold tracking-wide border bg-transparent transition-colors rounded flex items-center justify-center shadow-lg hover:shadow-xl border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black"
           >
             Book 30-min Call <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          </button>
         </div>
 
       </div>

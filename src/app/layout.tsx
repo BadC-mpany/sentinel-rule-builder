@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ConditionalSidebar } from "@/components/ConditionalSidebar";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -25,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sentinel Rule Builder | vSAML Architecture",
+  title: "Lilith Rule Builder | vSAML Architecture",
   description:
     "Build security rules for your RAG systems with the vSAML architecture. Define tool capabilities and taint policies to protect your AI agents.",
   keywords: ["RAG", "Security", "AI", "LangChain", "Rules", "vSAML"],
@@ -51,7 +47,7 @@ export default function RootLayout({
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
+          className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
         >
           <ThemeProvider>
             <div className="flex h-screen w-full overflow-hidden bg-bg-primary">
